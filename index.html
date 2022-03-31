@@ -1,13 +1,49 @@
 <html>
-    <head> 
-        <link rel="stylesheet" href = "mycss.css">
-    </head>
-    </head>
-    <body>
-        <div class="container">
-            <div class="toppane">Test Page</div>
-            <div class="leftpane">
-            <h1>Test Page</h1></div>            
-        </div>
-    </body>
-</html>  
+<title>RandomPicker</title>
+<header>
+<style>
+img {
+  border-radius: 50%;
+}
+button{
+    display: flex;
+    margin:0 auto;
+    align-items:center;
+}
+
+p{
+    height: 20px;
+    width: 400px;
+    background: white;
+    right: 50%;
+    left: 50%;
+}
+
+</style>
+</header>
+<body style="background-color:#1c87c9;">
+		<div style="width:650px; margin:0 auto;" id="random"><h1>Random<img id = "myimage" src="Image_Lottery.jpg" ></img>Picker</h1></div>
+	<button id= "mybutton" style="background: darkcyan;color:white;" ><b>Pick the Lucky Fellow</b></button>
+<br>
+<p id ="namedisplay" style="text-align:center;lcolor:red;font-size:18px;margin:0 auto;"><font face = "Bitstream Vera Sans Mono" size = "4" color = "red"><b></b></font></p>
+</body>
+<script>
+	var obj =["Alina Patra","Sharath Reddy Thokala","Vagdevi Duvvuri","Sugandha Das","Anudeep Kamepalli","Darshini Kaki","Mounika Challa","Mounica Arlagadda","Rama Laxmi Neela","Deepthi Valleti","Rudra Teja Burgula","Gottapu Yerram Naidu","Bhavya Sri Pallem","Premnath Chakri Kalla","Sailaja Ayyalasomayajula","Sudheer  Sarikonda","Purna Kishore Ukkutapu","Sravan Chandu Doppalapudi","Ramya Damera","Divya Venkata Gudla","Amulya Gaddam","Krishna Leela Pamidi","Mahendra Rao Muram","Dinesh S","Bharathkiran P","Prakash Bojja","Vivekanantham Janakiram","Mani Sindhu Gali","Harish Kumar Anumasa","Anudeep Pati","Sonia Shet","Jayasree R","Jyothi Sandhupatla","Jyothsna Kasarla","Siva Mada","Vijaya Lakshmi Namagiri","Raj Priyanka Polnati","Naga Satya Venkatesh Aradhyula","Sree Bhogoju"];
+	function generateRandomRoleNumber(max){
+    		return Math.floor(Math.random() * max);
+	}
+
+var mybutton = document.getElementById("mybutton");
+var namedisplay = document.getElementById("namedisplay");
+var myimage = document.getElementById("myimage");
+mybutton.addEventListener('click', ()=>{
+  randomnum = generateRandomRoleNumber(38);
+namedisplay.innerText = obj[randomnum];
+console.log(obj[randomnum]);
+});
+
+myimage.addEventListener('click', ()=>{
+  namedisplay.innerText = "";
+});
+</script>
+</html>
